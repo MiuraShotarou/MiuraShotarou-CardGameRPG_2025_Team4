@@ -9,7 +9,7 @@ public class RuleBook : MonoBehaviour
 {
     [SerializeField] Text message;
     [SerializeField] float pluseffect;
-
+    [SerializeField] ReflectorEffect ReflectorEffect;
 
 
     //一枚前のカードの追加効果処理
@@ -123,8 +123,15 @@ public class RuleBook : MonoBehaviour
             Hit = 2 * Hit;
         }
         Hit = (int)(Hit * Decrease);
-        player.Life -= Hit;
-        message.text = $"{Hit}ダメージをうけた";
+        if (ReflectorEffect.GetIsReflection())
+        {
+            ReflectorEffect.Reflection(player, enemy, Hit, message);
+        }
+        else
+        {
+            player.Life -= Hit;
+            message.text = $"{Hit}ダメージをうけた";
+        }
 
     }
 
