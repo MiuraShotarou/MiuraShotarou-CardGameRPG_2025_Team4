@@ -669,8 +669,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 310911774}
   m_HandleRect: {fileID: 310911773}
   m_Direction: 2
-  m_Value: -0.0000012207046
-  m_Size: 0.93750006
+  m_Value: 0
+  m_Size: 0.9375
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3017,6 +3017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: {fileID: 988921480}
   pluseffect: 2.5
+  ReflectorEffect: {fileID: 11400000, guid: ba6d4ef94888a024f801450f40285284, type: 2}
 --- !u!114 &675590293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4132,6 +4133,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 75c62c86f4376af48be0cb58fc407944, type: 2}
   - {fileID: 11400000, guid: edcda7e997f3f1d4f8beefe7c9fd8bd7, type: 2}
   - {fileID: 11400000, guid: 8ea07de4f1a03614ea7ef756f776789c, type: 2}
+  - {fileID: 11400000, guid: ec95e6ad5de69ec44ab277646afd064a, type: 2}
 --- !u!4 &959393679
 Transform:
   m_ObjectHideFlags: 0
@@ -4774,6 +4776,9 @@ MonoBehaviour:
   - card_1_ID: 104
     card_2_ID: 104
     SynthesisCard: 204
+  - card_1_ID: 103
+    card_2_ID: 102
+    SynthesisCard: 205
   synthesisTriple:
   - card_1_ID: 101
     card_2_ID: 101
@@ -5502,7 +5507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 200.00006}
+  m_AnchoredPosition: {x: 0, y: 200.00005}
   m_SizeDelta: {x: 0, y: 800}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1324895147
