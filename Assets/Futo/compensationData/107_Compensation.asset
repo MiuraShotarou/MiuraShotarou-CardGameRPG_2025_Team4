@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95f359ba17d92a642aa2d30fdfb5f2af, type: 3}
-  m_Name: Compensation
+  m_Name: 107_Compensation
   m_EditorClassIdentifier: 
   displayName: "\u4EE3\u511F\u653B\u6483"
   cardName: Compensation
   synthesisType: 0
   type: 5
-  id: 0
-  icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  id: 107
+  icon: {fileID: 21300000, guid: d7d3e2169b005864a95c27edc05164ad, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   description: "\u4EE3\u511F\u653B\u6483"
   cardStatus:
-    attack_Status: 0
+    attack_Status: 30
     magic_Status: 0
     defense_Status: 0
     heal_Status: 0
-  uniqueEffect: {fileID: 0}
+  uniqueEffect: {fileID: 11400000, guid: 3d921da500dea8f479b742b3dbde8b18, type: 2}
   flontBuff: []
