@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
-using UnityEngine;
-using UnityEngine.Scripting;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class RuleBook : MonoBehaviour
@@ -10,6 +6,7 @@ public class RuleBook : MonoBehaviour
     [SerializeField] Text message;
     [SerializeField] float pluseffect;
     [SerializeField] ReflectorEffect ReflectorEffect;
+    [SerializeField] AnesthesiaEffect AnesthesiaEffect;
 
 
     //一枚前のカードの追加効果処理
@@ -48,6 +45,8 @@ public class RuleBook : MonoBehaviour
     //カードの効果処理
     public void selectedCardVS(Battler player, Card card, Card flontCard, Enemy enemy)
     {
+        int beforeEnemyHP = enemy.Base.EnemyLife; //攻撃を受けたかどうかを判定する用の変数
+        AnesthesiaEffect.ApplyAnesthesiaEffect(message);
         card.Base.UniqueEffect.Execute(card, flontCard, player, enemy, message);
         /*if (card.Base.Type == CardType.Sword)
         {
@@ -95,11 +94,20 @@ public class RuleBook : MonoBehaviour
             kekka.text = $"{player.Heal}HPかいふくした";
         }*/
 
+        if(beforeEnemyHP != enemy.Base.EnemyLife)
+        {
+            AnesthesiaEffect.ResetAnesthesia(message);
+        }
     }
 
     //エネミーの強力攻撃までのカウントダウン
     public void EnemyCountDown(Enemy enemy)
     {
+        if (AnesthesiaEffect.GetIsAnesthesia())//麻酔状態の時はカウントの進行はしない
+        {
+            return;
+        } 
+
         if (enemy.Base.Count1 == 0)
         {
             enemy.Base.Count1 = enemy.Base.EnemyCount;
@@ -123,6 +131,13 @@ public class RuleBook : MonoBehaviour
             Hit = 2 * Hit;
         }
         Hit = (int)(Hit * Decrease);
+
+        if (AnesthesiaEffect.GetIsAnesthesia())
+        {
+            message.text = "相手は麻酔状態で攻撃が出来ない";
+            return;
+        }
+
         if (ReflectorEffect.GetIsReflection())
         {
             ReflectorEffect.Reflection(player, enemy, Hit, message);

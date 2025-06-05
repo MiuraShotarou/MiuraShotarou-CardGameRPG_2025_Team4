@@ -19,7 +19,7 @@ MonoBehaviour:
   id: 205
   icon: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 0}
-  description: "\u76F8\u624B\u306E\u653B\u6483\u3092\u53CD\u5C04\u3059\u308B"
+  description: "\u76F8\u624B\u306E\u653B\u6483\u3092\u53CD\u5C04"
   cardStatus:
     attack_Status: 0
     magic_Status: 0
