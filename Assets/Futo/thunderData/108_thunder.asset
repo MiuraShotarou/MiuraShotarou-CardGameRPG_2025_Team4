@@ -19,11 +19,11 @@ MonoBehaviour:
   id: 108
   icon: {fileID: 21300000, guid: ae397095eac9fc443a64911c33a86f8f, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
-  description: 
+  description: "\u96F7\u6483"
   cardStatus:
     attack_Status: 0
     magic_Status: 0
     defense_Status: 0
     heal_Status: 0
-  uniqueEffect: {fileID: 0}
+  uniqueEffect: {fileID: 11400000, guid: 93fb0cbf44e57144fa67c3cdbc4724e1, type: 2}
   flontBuff: []

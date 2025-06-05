@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c653f85dbeffe5a4c9b38ac7f0089c26, type: 3}
   m_Name: Thunder Effect
   m_EditorClassIdentifier: 
-  thunderDamage: 5
+  thunderDamage: 10
