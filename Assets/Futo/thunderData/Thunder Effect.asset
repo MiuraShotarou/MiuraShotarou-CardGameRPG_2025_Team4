@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: Thunder Effect
   m_EditorClassIdentifier: 
   thunderDamage: 10
+  _isThunder: 0
+  absoluteThunder: 3
+  thunderCount: 9
+  isThunderpercent: 5

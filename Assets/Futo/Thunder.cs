@@ -8,7 +8,7 @@ public class ThunderEffect : UniqueEffect
 {
     [SerializeField, Range(5, 50)] int thunderDamage;
     public bool _isThunder = false;
-    [SerializeField, Range(1, 5)] int absoluteThunder = 3;
+    [SerializeField, Range(1, 5)] int absoluteThunder = 4;
     [SerializeField] int thunderCount = 0;
     [SerializeField] int isThunderpercent = 5;
 
@@ -32,6 +32,7 @@ public class ThunderEffect : UniqueEffect
         if( thunderCount >= absoluteThunder)
         {
             _isThunder = true;
+            thunderCount = 0;
         }
     }
 }

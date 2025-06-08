@@ -21,7 +21,7 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   description: "\u4EE3\u511F\u653B\u6483"
   cardStatus:
-    attack_Status: 30
+    attack_Status: 20
     magic_Status: 0
     defense_Status: 0
     heal_Status: 0
