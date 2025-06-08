@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thunderDamage: 10
   _isThunder: 0
-  absoluteThunder: 3
-  thunderCount: 9
+  absoluteThunder: 4
+  thunderCount: 1
   isThunderpercent: 5
