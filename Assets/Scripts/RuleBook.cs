@@ -48,7 +48,6 @@ public class RuleBook : MonoBehaviour
     public IEnumerator selectedCardVS(Battler player, Card card, Card flontCard, Enemy enemy)
     {
         int beforeEnemyHP = enemy.Base.EnemyLife; //攻撃を受けたかどうかを判定する用の変数
-        AnesthesiaEffect.ApplyAnesthesiaEffect(message);
         card.Base.UniqueEffect.Execute(card, flontCard, player, enemy, message);
         /*if (card.Base.Type == CardType.Sword)
         {
@@ -126,6 +125,7 @@ public class RuleBook : MonoBehaviour
     //敵のターン処理
     public void EnemyAttack(Battler player, Enemy enemy)
     {
+        AnesthesiaEffect.ApplyAnesthesiaEffect(message);
         if (ThunderEffect._isThunder == true)
         {
             message.text = "雷撃攻撃で行動不能になった";
