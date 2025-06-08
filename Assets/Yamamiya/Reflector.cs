@@ -19,11 +19,11 @@ public class ReflectorEffect : UniqueEffect
     {
         int halfDamage = (int)(hit * 0.5f);
         player.Life -= halfDamage;
-        message.text = $"{halfDamage}ダメージをうけた";
+        //message.text = $"{halfDamage}ダメージをうけた";
         int damage = (int)(halfDamage * reflectionValue);
         enemy.Base.EnemyLife -= damage;
         enemy.EnemyLifeContlloer.lifeReflection(enemy);
-        message.text = $"{damage}ダメージ与えた";
+        message.text = $"{halfDamage}ダメージ受けたが,\n" + $"{damage}ダメージ与えた";
         if (enemy.Base.EnemyLife < 0) 
         {
             enemy.Base.EnemyLife = 0;

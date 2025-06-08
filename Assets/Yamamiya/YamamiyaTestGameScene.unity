@@ -3019,6 +3019,7 @@ MonoBehaviour:
   pluseffect: 2.5
   ReflectorEffect: {fileID: 11400000, guid: ba6d4ef94888a024f801450f40285284, type: 2}
   AnesthesiaEffect: {fileID: 11400000, guid: b4cb48962e5f7034fb3a0b1f65c25919, type: 2}
+  ThunderEffect: {fileID: 11400000, guid: 93fb0cbf44e57144fa67c3cdbc4724e1, type: 2}
 --- !u!114 &675590293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4136,6 +4137,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ea07de4f1a03614ea7ef756f776789c, type: 2}
   - {fileID: 11400000, guid: ec95e6ad5de69ec44ab277646afd064a, type: 2}
   - {fileID: 11400000, guid: 646534064e554674a92a15823b66bb3a, type: 2}
+  - {fileID: 11400000, guid: 4dd95646b5355d14b879bee52c6e0a03, type: 2}
 --- !u!4 &959393679
 Transform:
   m_ObjectHideFlags: 0
@@ -5512,7 +5514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 200.0002}
+  m_AnchoredPosition: {x: 0, y: 199.99997}
   m_SizeDelta: {x: 0, y: 800}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1324895147
@@ -8628,8 +8630,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1804400923}
   m_HandleRect: {fileID: 1804400922}
   m_Direction: 2
-  m_Value: -0.0000009155273
-  m_Size: 0.74987006
+  m_Value: 0
+  m_Size: 0.75
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

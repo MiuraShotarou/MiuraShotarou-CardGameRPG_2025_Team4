@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class RuleBook : MonoBehaviour
@@ -7,6 +8,7 @@ public class RuleBook : MonoBehaviour
     [SerializeField] float pluseffect;
     [SerializeField] ReflectorEffect ReflectorEffect;
     [SerializeField] AnesthesiaEffect AnesthesiaEffect;
+    [SerializeField] ThunderEffect ThunderEffect;
 
 
     //一枚前のカードの追加効果処理
@@ -43,7 +45,7 @@ public class RuleBook : MonoBehaviour
     }*/
 
     //カードの効果処理
-    public void selectedCardVS(Battler player, Card card, Card flontCard, Enemy enemy)
+    public IEnumerator selectedCardVS(Battler player, Card card, Card flontCard, Enemy enemy)
     {
         int beforeEnemyHP = enemy.Base.EnemyLife; //攻撃を受けたかどうかを判定する用の変数
         AnesthesiaEffect.ApplyAnesthesiaEffect(message);
@@ -94,8 +96,9 @@ public class RuleBook : MonoBehaviour
             kekka.text = $"{player.Heal}HPかいふくした";
         }*/
 
-        if(beforeEnemyHP != enemy.Base.EnemyLife)
+        if(beforeEnemyHP != enemy.Base.EnemyLife && AnesthesiaEffect.GetUsedAnesthesia())
         {
+            yield return new WaitForSeconds(0.5f);
             AnesthesiaEffect.ResetAnesthesia(message);
         }
     }
@@ -123,6 +126,13 @@ public class RuleBook : MonoBehaviour
     //敵のターン処理
     public void EnemyAttack(Battler player, Enemy enemy)
     {
+        if (ThunderEffect._isThunder == true)
+        {
+            message.text = "雷撃攻撃で行動不能になった";
+            ThunderEffect._isThunder = false;
+            return;
+        }
+
         int Hit = (int)(enemy.Base.EnemyAttack * Random.Range(0.8f, 1.1f));
         float Decrease = 1f - player.Defens / 100f;
 

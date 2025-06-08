@@ -24,7 +24,7 @@ public class AnesthesiaEffect : UniqueEffect
         {
             return;
         }
-        int random = Random.Range(0, 30);
+        int random = Random.Range(0, 100);
 
         if (Index == anethesiaProbabilities.Length -1) //配列最後尾になったときに麻酔状態を解除する
         {
@@ -57,5 +57,10 @@ public class AnesthesiaEffect : UniqueEffect
     public bool GetIsAnesthesia()
     {
         return IsAnesthesia;
+    }
+
+    public bool GetUsedAnesthesia()
+    {
+        return IsUsedAnesthesia;
     }
 }

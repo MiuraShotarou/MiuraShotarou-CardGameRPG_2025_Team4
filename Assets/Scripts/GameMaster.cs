@@ -145,7 +145,7 @@ public class GameMaster : MonoBehaviour
             card.transform.position += Vector3.up * 0.2f;
             //ruleBook.FlontEffect(player, flontCard);
             //ruleBook.TypeEffect(player, card);
-            ruleBook.selectedCardVS(player, card, flontCard, enemy);
+            StartCoroutine(ruleBook.selectedCardVS(player, card, flontCard, enemy));
             gameUI.ShowLifes(player.Life);
             enemy.EnemyLifeContlloer.lifeReflection(enemy);
             yield return new WaitForSeconds(1.2f);
