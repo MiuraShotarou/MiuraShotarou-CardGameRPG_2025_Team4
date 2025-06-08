@@ -23,9 +23,11 @@ public class Deck : MonoBehaviour
     [SerializeField] int DeckHeight;
     [SerializeField] float cardInterval;
 
-    public List<int> Base;
-    public List<int> DeckAll;
-    public List<int> cardDeck;
+    [SerializeField] List<int> Base;　　 //エディタで編集可能なスターターデッキ。int にはIDが入っている。
+
+    //public List<int> Base;
+    public List<int> DeckAll;  //手札も含めたすべてのカード。
+    public List<int> cardDeck; //int のリスト　→ この中からインデックスに相当するカードを取得する。
     public List<Card> LookDeck;
     public List<Card> LookCards;
 
@@ -42,7 +44,7 @@ public class Deck : MonoBehaviour
     //カスタマイズしたデッキをセットする
     public void DeckSet()
     {
-        cardDeck = new List<int>(DeckAll);
+        cardDeck = new List<int>(DeckAll); 
         DeckPanel.SetActive(true);
         CardList.SetActive(false);
     }

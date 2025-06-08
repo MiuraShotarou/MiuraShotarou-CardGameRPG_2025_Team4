@@ -6,9 +6,10 @@ public class RuleBook : MonoBehaviour
 {
     [SerializeField] Text message;
     [SerializeField] float pluseffect;
-    [SerializeField] ReflectorEffect ReflectorEffect;
-    [SerializeField] AnesthesiaEffect AnesthesiaEffect;
-    [SerializeField] ThunderEffect ThunderEffect;
+    [SerializeField] PoisonEffect PoisonEffect;         //ID 105
+    [SerializeField] AnesthesiaEffect AnesthesiaEffect; //ID 106
+    [SerializeField] ThunderEffect ThunderEffect;       //ID 108
+    [SerializeField] ReflectorEffect ReflectorEffect;   //ID 205
 
 
     //一枚前のカードの追加効果処理
@@ -158,6 +159,13 @@ public class RuleBook : MonoBehaviour
             message.text = $"{Hit}ダメージをうけた";
         }
 
+        if (PoisonEffect.GetIsPoison())
+        {
+            int poisonDamage = PoisonEffect.ExcutePoison();
+            enemy.Base.EnemyLife -= poisonDamage;
+            message.text = $"{poisonDamage}毒ダメージを与えた。";
+            Debug.Log($"{poisonDamage}毒ダメージを与えた。");
+        }
     }
 
     //敵の状態表示
