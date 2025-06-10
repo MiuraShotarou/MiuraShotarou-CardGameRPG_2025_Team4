@@ -10,20 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95f359ba17d92a642aa2d30fdfb5f2af, type: 3}
-  m_Name: 206_Kyuketu
+  m_Name: New Card Base
   m_EditorClassIdentifier: 
-  displayName: "\u5438\u8840"
-  cardName: "\u672A\u5B9A"
-  synthesisType: 1
-  type: 0
-  id: 206
+  displayName: 
+  cardName: 
+  synthesisType: 0
+  id: 0
   icon: {fileID: 0}
-  color: {r: 1, g: 1, b: 1, a: 0}
-  description: "\u672A\u5B9A\nCardStatus\u672A\u5B9A"
+  color: {r: 0, g: 0, b: 0, a: 0}
+  description: 
   cardStatus:
-    attack_Status: 100
+    attack_Status: 0
     magic_Status: 0
     defense_Status: 0
     heal_Status: 0
-  uniqueEffect: {fileID: 11400000, guid: 03768a1c1a13bce46b924ef54f898469, type: 2}
+  uniqueEffect: {fileID: 11400000, guid: 1d35517e7b4a3684dbe1d0cf2bf21263, type: 2}
   flontBuff: []

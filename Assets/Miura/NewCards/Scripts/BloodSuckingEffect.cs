@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(menuName = "UniqueEffects/Kyuketu")]
-public class KyuketuEffect : UniqueEffect
+[CreateAssetMenu(menuName = "UniqueEffects/BloodSucking")]
+public class BloodSucking : UniqueEffect
 {
     //カードの効果処理
     public override void Execute(Card card, Card flontCard, Battler player, Enemy enemy, Text message)
@@ -22,7 +22,7 @@ public class KyuketuEffect : UniqueEffect
 
         enemy.Base.EnemyLife -= damage;
         player.Life += healValue;
-        message.text = $"{damage}ダメージ与えた\n{healValue}HPかいふくした";
+        message.text = $"{damage}HPを吸い取った。"; //$"{damage}ダメージ与えた\n{healValue}HPかいふくした"
         if (enemy.Base.EnemyLife < 0)
         {
             enemy.Base.EnemyLife = 0;
