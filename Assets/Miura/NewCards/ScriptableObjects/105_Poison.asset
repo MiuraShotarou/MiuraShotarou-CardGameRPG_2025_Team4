@@ -17,8 +17,8 @@ MonoBehaviour:
   synthesisType: 0
   id: 105
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
-  description: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  description: "\u672A\u5B9A"
   cardStatus:
     attack_Status: 0
     magic_Status: 0

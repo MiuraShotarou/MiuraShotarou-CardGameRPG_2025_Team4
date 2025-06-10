@@ -13,11 +13,11 @@ public class PoisonEffect : UniqueEffect 　　　　　　//クラス名 (Attac
     bool isPoison = false;
     int _isPoisonTurn;
     int _poisonDamage;
-
+    int poisonTurnCount;
     int IsPoisonTurn
     {
         get { return _isPoisonTurn; }
-        set {_isPoisonTurn = value; if (_isPoisonTurn <= 0){ isPoison = false; } }
+        set {_isPoisonTurn = value; if (_isPoisonTurn <= 0){ isPoison = false; poisonTurnCount = 0; } }
     }
     int PoisonDamage
     {
@@ -40,8 +40,9 @@ public class PoisonEffect : UniqueEffect 　　　　　　//クラス名 (Attac
 
     public int ExcutePoison()
     {
-        PoisonDamage = poisonAttackStatus + (poisonMultiplier * (isPoisonTurn - IsPoisonTurn)); //ターンが経過するごとに追加ダメージ倍増 → 書き直し。
+        PoisonDamage = poisonAttackStatus + (poisonMultiplier * poisonTurnCount);
         IsPoisonTurn--;
+        poisonTurnCount++;
         return PoisonDamage;
     }
 
