@@ -6,7 +6,7 @@ public class RuleBook : MonoBehaviour
 {
     [SerializeField] Text message;
     [SerializeField] float pluseffect;
-    [SerializeField] PoisonEffect PoisonEffect;         //ID 105
+    [SerializeField] public PoisonEffect PoisonEffect;         //ID 105
     [SerializeField] AnesthesiaEffect AnesthesiaEffect; //ID 106
     [SerializeField] ThunderEffect ThunderEffect;       //ID 108
     [SerializeField] ReflectorEffect ReflectorEffect;   //ID 205
@@ -96,7 +96,7 @@ public class RuleBook : MonoBehaviour
             kekka.text = $"{player.Heal}HPかいふくした";
         }*/
 
-        if(beforeEnemyHP != enemy.Base.EnemyLife && AnesthesiaEffect.GetUsedAnesthesia())
+        if (beforeEnemyHP != enemy.Base.EnemyLife && AnesthesiaEffect.GetUsedAnesthesia())
         {
             yield return new WaitForSeconds(0.5f);
             AnesthesiaEffect.ResetAnesthesia(message);
@@ -145,7 +145,7 @@ public class RuleBook : MonoBehaviour
 
         if (AnesthesiaEffect.GetIsAnesthesia())
         {
-            message.text = "相手は麻酔状態で攻撃が出来ない";
+            message.text = "相手は麻酔状態で攻撃が出来ない"; //タイミングが良くないのでは？
             return;
         }
 
@@ -165,7 +165,9 @@ public class RuleBook : MonoBehaviour
             enemy.Base.EnemyLife -= poisonDamage;
             message.text = $"{poisonDamage}毒ダメージを与えた。";
             Debug.Log($"{poisonDamage}毒ダメージを与えた。");
+            Debug.Log($"IsPoisonTurn:{PoisonEffect.IsPoisonTurn}, isPoison == {PoisonEffect.isPoison}, poisonTurnCount:{PoisonEffect.poisonTurnCount}");
         }
+        enemy.EnemyLifeContlloer.lifeReflection(enemy);  //
     }
 
     //敵の状態表示

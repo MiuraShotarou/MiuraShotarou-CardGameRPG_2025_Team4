@@ -59,7 +59,7 @@ public class GameMaster : MonoBehaviour
         deck.DeckListOpen();
         deck.DeckSet();
         SendCardTo(player);
-
+        RefreshAddFunctionDate();
         TurnSetup();
     }
 
@@ -147,7 +147,6 @@ public class GameMaster : MonoBehaviour
             //ruleBook.TypeEffect(player, card);
             StartCoroutine(ruleBook.selectedCardVS(player, card, flontCard, enemy));
             gameUI.ShowLifes(player.Life);
-            enemy.EnemyLifeContlloer.lifeReflection(enemy);
             yield return new WaitForSeconds(1.2f);
             if (enemy.Base.EnemyLife == 0)
             {
@@ -163,6 +162,12 @@ public class GameMaster : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
 
         StartCoroutine(EnemyAttack());
+        enemy.EnemyLifeContlloer.lifeReflection(enemy);
+        if (enemy.Base.EnemyLife == 0) //追加 6/12
+        {
+            ShowResult();
+            yield break;
+        }
     }
     //カード合成する
     IEnumerator CardSynthesis()
@@ -274,4 +279,9 @@ public class GameMaster : MonoBehaviour
         synthesis.OnSynthesisPanel();
     }
 
+    //新カードの内部データをリセットする。(追加)
+    void RefreshAddFunctionDate()
+    {
+        ruleBook.PoisonEffect.IsPoisonTurn = 0;
+    }
 }
