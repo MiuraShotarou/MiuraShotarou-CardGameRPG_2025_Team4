@@ -24,6 +24,7 @@ public class ReflectorEffect : UniqueEffect
         enemy.Base.EnemyLife -= damage;
         enemy.EnemyLifeContlloer.lifeReflection(enemy);
         message.text = $"{halfDamage}ダメージ受けたが,\n" + $"{damage}ダメージ与えた";
+        Debug.Log($"{halfDamage}ダメージ受けたが,\n" + $"{damage}ダメージ与えた"); //追加コメント
         if (enemy.Base.EnemyLife < 0) 
         {
             enemy.Base.EnemyLife = 0;

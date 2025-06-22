@@ -167,7 +167,7 @@ public class RuleBook : MonoBehaviour
             Debug.Log($"{poisonDamage}毒ダメージを与えた。");
             Debug.Log($"IsPoisonTurn:{PoisonEffect.IsPoisonTurn}, isPoison == {PoisonEffect.isPoison}, poisonTurnCount:{PoisonEffect.poisonTurnCount}");
         }
-        enemy.EnemyLifeContlloer.lifeReflection(enemy);  //
+        enemy.EnemyLifeContlloer.lifeReflection(enemy);
     }
 
     //敵の状態表示
