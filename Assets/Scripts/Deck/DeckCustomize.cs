@@ -28,20 +28,6 @@ public class DeckCustomize : MonoBehaviour
                 &&
                 destL != -1)
             {
-                string insideCardDeck = "";
-                for (int i = 0; i < deck.DeckAll.Count; i++)
-                {
-                    insideCardDeck += $"[{i}]:{deck.DeckAll[i]}, ";
-                }
-                string outsideCardDeck = "";
-                for (int i = 0; i < deck.LookDeck.Count; i++)
-                {
-                    outsideCardDeck += $"[{i}]:{deck.LookDeck[i].Base.ID}, ";
-                }
-                Debug.Log($"destD == {destD}, destL == {destL}, ID:{card.Base.ID},");
-                Debug.Log($"{insideCardDeck}");
-                Debug.Log($"{outsideCardDeck}");
-
                 deck.DeckAll.RemoveAt(destD);
                 Destroy(deck.LookDeck[destL].gameObject);
                 deck.LookDeck.RemoveAt(destL);
