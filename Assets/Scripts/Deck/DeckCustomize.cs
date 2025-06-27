@@ -22,14 +22,37 @@ public class DeckCustomize : MonoBehaviour
     {
         if (card.transform.parent == deckContents.transform)
         {
-            int dest = deck.DeckAll.FindIndex(number => number == card.Base.ID);
-            
-            deck.DeckAll.RemoveAt(dest);
-            Destroy(deck.LookDeck[dest].gameObject);
-            deck.LookDeck.RemoveAt(dest);
+            int destD = deck.DeckAll.FindIndex(number => number == card.Base.ID);
+            int destL = deck.LookDeck.FindIndex(number => number == card);
+            if (destD != -1
+                &&
+                destL != -1)
+            {
+                string insideCardDeck = "";
+                for (int i = 0; i < deck.DeckAll.Count; i++)
+                {
+                    insideCardDeck += $"[{i}]:{deck.DeckAll[i]}, ";
+                }
+                string outsideCardDeck = "";
+                for (int i = 0; i < deck.LookDeck.Count; i++)
+                {
+                    outsideCardDeck += $"[{i}]:{deck.LookDeck[i].Base.ID}, ";
+                }
+                Debug.Log($"destD == {destD}, destL == {destL}, ID:{card.Base.ID},");
+                Debug.Log($"{insideCardDeck}");
+                Debug.Log($"{outsideCardDeck}");
 
-            deck.deckArignment();
-            card.PosReset();
+                deck.DeckAll.RemoveAt(destD);
+                Destroy(deck.LookDeck[destL].gameObject);
+                deck.LookDeck.RemoveAt(destL);
+
+                deck.deckArignment();
+                card.PosReset();
+            }
+            else
+            {
+                Debug.Log("Indexが不適切");
+            }
         }
         else if (deck.DeckAll.Count < 15 && card.transform.parent == cardContents.transform)
         {
