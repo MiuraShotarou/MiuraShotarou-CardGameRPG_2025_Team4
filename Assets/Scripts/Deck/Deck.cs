@@ -36,7 +36,14 @@ public class Deck : MonoBehaviour
     //ゲーム開始時にデッキをデフォルト状態にする
     public void DeckDefault()
     {
-        DeckAll = new List<int>(Base);
+        if (MemorizedDeckClass.MemorizedDeck == null)
+        {
+            DeckAll = new List<int>(Base);
+        }
+        else if (MemorizedDeckClass.MemorizedDeck != null)
+        {
+            DeckAll = MemorizedDeckClass.MemorizedDeck.ToList();
+        }
         DeckListOpen();
         CustomCardListOpen();
     }

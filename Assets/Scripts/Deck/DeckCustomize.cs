@@ -65,6 +65,11 @@ public class DeckCustomize : MonoBehaviour
         {
             exitButton.SetActive(false);
         }
-        
     }
+}
+
+public class MemorizedDeckClass
+{
+    static int[] _memorizedDeck;
+    public static int[] MemorizedDeck { get { return _memorizedDeck; } set { _memorizedDeck = value; } }
 }
