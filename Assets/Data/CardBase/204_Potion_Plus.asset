@@ -15,7 +15,6 @@ MonoBehaviour:
   displayName: "\u30DD\u30FC\u30B7\u30E7\u30F3\uFF0B"
   cardName: Potion_Plus
   synthesisType: 1
-  type: 2
   id: 204
   icon: {fileID: 21300000, guid: c1e43fb0bb601644f8d5de01ccff0da4, type: 3}
   color: {r: 1, g: 0, b: 0, a: 1}
@@ -37,3 +36,7 @@ MonoBehaviour:
     flontCard: Potion
   - buff: 1.5
     flontCard: Compensation
+  - buff: 1.25
+    flontCard: BloodSucking
+  - buff: 1.5
+    flontCard: Anethesia

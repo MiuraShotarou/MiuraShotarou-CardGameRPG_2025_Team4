@@ -15,7 +15,6 @@ MonoBehaviour:
   displayName: "\u5263\uFF0B"
   cardName: Sword_Plus
   synthesisType: 1
-  type: 0
   id: 201
   icon: {fileID: 21300000, guid: d7d3e2169b005864a95c27edc05164ad, type: 3}
   color: {r: 1, g: 0, b: 0, a: 1}
@@ -37,3 +36,7 @@ MonoBehaviour:
     flontCard: Potion
   - buff: 1.5
     flontCard: Compensation
+  - buff: 1.5
+    flontCard: BloodSucking
+  - buff: 1.5
+    flontCard: Anethesia

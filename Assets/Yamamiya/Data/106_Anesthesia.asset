@@ -25,20 +25,4 @@ MonoBehaviour:
     defense_Status: 0
     heal_Status: 0
   uniqueEffect: {fileID: 11400000, guid: b4cb48962e5f7034fb3a0b1f65c25919, type: 2}
-  flontBuff:
-  - buff: 1
-    flontCard: Sword
-  - buff: 1
-    flontCard: Magic
-  - buff: 1
-    flontCard: Shield
-  - buff: 1
-    flontCard: Potion
-  - buff: 1
-    flontCard: Sword+
-  - buff: 1
-    flontCard: Magic+
-  - buff: 1
-    flontCard: Shield+
-  - buff: 1
-    flontCard: Potion+
+  flontBuff: []

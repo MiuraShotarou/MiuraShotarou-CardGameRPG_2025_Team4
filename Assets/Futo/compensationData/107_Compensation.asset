@@ -25,4 +25,8 @@ MonoBehaviour:
     defense_Status: 0
     heal_Status: 0
   uniqueEffect: {fileID: 11400000, guid: 3d921da500dea8f479b742b3dbde8b18, type: 2}
-  flontBuff: []
+  flontBuff:
+  - buff: 2
+    flontCard: Sword
+  - buff: 1.5
+    flontCard: Anesthesia
