@@ -23,6 +23,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField] GameUI gameUI;
     [SerializeField] Synthesis synthesis;
     [SerializeField] int handMax;
+    [SerializeField] SoundManager soundManager;
 
     public int enemyNum;
     int cardsum;
@@ -62,6 +63,7 @@ public class GameMaster : MonoBehaviour
         SendCardTo(player);
         RefreshAddFunctionDate();
         TurnSetup();
+        StartCoroutine(soundManager.PlayBattleBGM());
     }
 
     void TurnSetup()
@@ -249,7 +251,10 @@ public class GameMaster : MonoBehaviour
             gameUI.ShowGameResult("LOSE" ,TurnCount);
 
         else if (enemy.Base.EnemyLife == 0)           //[元:(enemy.Base.EnemyLife == 0)]
-            gameUI.ShowGameResult("WIN" ,TurnCount);
+        {
+            gameUI.ShowGameResult("WIN", TurnCount);
+            soundManager.PlayWinBGM();
+        }
     }
 
     //次ターンに向けてのリセットと準備
