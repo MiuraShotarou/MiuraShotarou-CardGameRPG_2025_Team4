@@ -10,11 +10,11 @@ public class PoisonEffect : UniqueEffect 　　　　　　//クラス名 (Attac
     [SerializeField] int poisonAttackStatus = 10; //default 10
     [SerializeField] int poisonMultiplier = 5;    //default 5
     [SerializeField] int poisonAttackLimit = 30;  //default 30
-    bool isPoison = false;
+    public bool isPoison = false;
     int _isPoisonTurn;
     int _poisonDamage;
-    int poisonTurnCount;
-    int IsPoisonTurn
+    public int poisonTurnCount;
+    public int IsPoisonTurn
     {
         get { return _isPoisonTurn; }
         set {_isPoisonTurn = value; if (_isPoisonTurn <= 0){ isPoison = false; poisonTurnCount = 0; } }
@@ -41,8 +41,8 @@ public class PoisonEffect : UniqueEffect 　　　　　　//クラス名 (Attac
     public int ExcutePoison()
     {
         PoisonDamage = poisonAttackStatus + (poisonMultiplier * poisonTurnCount);
-        IsPoisonTurn--;
         poisonTurnCount++;
+        IsPoisonTurn--;
         return PoisonDamage;
     }
 

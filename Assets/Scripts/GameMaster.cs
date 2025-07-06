@@ -59,7 +59,7 @@ public class GameMaster : MonoBehaviour
         deck.DeckListOpen();
         deck.DeckSet();
         SendCardTo(player);
-
+        RefreshAddFunctionDate();
         TurnSetup();
     }
 
@@ -146,8 +146,8 @@ public class GameMaster : MonoBehaviour
             //ruleBook.FlontEffect(player, flontCard);
             //ruleBook.TypeEffect(player, card);
             StartCoroutine(ruleBook.selectedCardVS(player, card, flontCard, enemy));
+            enemy.EnemyLifeContlloer.lifeReflection(enemy);                           //追加: 元[何もない]
             gameUI.ShowLifes(player.Life);
-            enemy.EnemyLifeContlloer.lifeReflection(enemy);
             yield return new WaitForSeconds(1.2f);
             if (enemy.Base.EnemyLife == 0)
             {
@@ -163,6 +163,13 @@ public class GameMaster : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
 
         StartCoroutine(EnemyAttack());
+        enemy.EnemyLifeContlloer.lifeReflection(enemy);
+        if (enemy.Base.EnemyLife == 0) //追加t・変更 6/12 [元:(enemy.Base.EnemyLife == 0)]
+        {
+            Debug.Log("敵の死亡判定がされた");
+            ShowResult();
+            yield break;
+        }
     }
     //カード合成する
     IEnumerator CardSynthesis()
@@ -237,10 +244,10 @@ public class GameMaster : MonoBehaviour
     //ゲームの結果を表示する
     void ShowResult()
     {
-        if (player.Life == 0)
+        if (player.Life == 0)                         //これもどうなのだろう？
             gameUI.ShowGameResult("LOSE" ,TurnCount);
 
-        else if (enemy.Base.EnemyLife == 0)
+        else if (enemy.Base.EnemyLife == 0)           //[元:(enemy.Base.EnemyLife == 0)]
             gameUI.ShowGameResult("WIN" ,TurnCount);
     }
 
@@ -274,4 +281,9 @@ public class GameMaster : MonoBehaviour
         synthesis.OnSynthesisPanel();
     }
 
+    //新カードの内部データをリセットする。(追加)
+    void RefreshAddFunctionDate()
+    {
+        ruleBook.PoisonEffect.IsPoisonTurn = 0;
+    }
 }

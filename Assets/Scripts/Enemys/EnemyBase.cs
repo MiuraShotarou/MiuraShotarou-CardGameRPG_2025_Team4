@@ -33,7 +33,7 @@ public class EnemyBase : ScriptableObject
     public string Description { get => description; set => description = value; }
     public string Name1 { get => Name; set => Name = value; }
     public int EnemyAttack { get => enemyAttack; set => enemyAttack = value; }
-    public int EnemyLife { get => enemyLife; set => enemyLife = value; }
+    public int EnemyLife { get => enemyLife; set { enemyLife = value; if (enemyLife < 0) { enemyLife = 0; } }}  //追加 [元: set => enemyLife = value;]
     public int EnemyLifeMax { get => enemyLifeMax; set => enemyLifeMax = value; }
     public int EnemyDefense { get => enemyDefense; set => enemyDefense = value; }
     public int EnemyMagicDefense { get => enemyMagicDefense; set => enemyMagicDefense = value; }

@@ -22,14 +22,23 @@ public class DeckCustomize : MonoBehaviour
     {
         if (card.transform.parent == deckContents.transform)
         {
-            int dest = deck.DeckAll.FindIndex(number => number == card.Base.ID);
-            
-            deck.DeckAll.RemoveAt(dest);
-            Destroy(deck.LookDeck[dest].gameObject);
-            deck.LookDeck.RemoveAt(dest);
+            int destD = deck.DeckAll.FindIndex(number => number == card.Base.ID);
+            int destL = deck.LookDeck.FindIndex(number => number == card);
+            if (destD != -1
+                &&
+                destL != -1)
+            {
+                deck.DeckAll.RemoveAt(destD);
+                Destroy(deck.LookDeck[destL].gameObject);
+                deck.LookDeck.RemoveAt(destL);
 
-            deck.deckArignment();
-            card.PosReset();
+                deck.deckArignment();
+                card.PosReset();
+            }
+            else
+            {
+                Debug.Log("Indexが不適切");
+            }
         }
         else if (deck.DeckAll.Count < 15 && card.transform.parent == cardContents.transform)
         {
