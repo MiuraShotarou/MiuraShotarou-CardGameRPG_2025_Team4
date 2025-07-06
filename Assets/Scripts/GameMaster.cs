@@ -46,6 +46,7 @@ public class GameMaster : MonoBehaviour
     //ゲームスタート時のセットアップ内容
     public void Setup()
     {
+        MemorizedDeckClass.MemorizedDeck = deck.DeckAll.ToArray();
         player.SetPlayer();
         gameUI.ShowLifes(player.Life);
         ruleBook.TextSetupNext();
