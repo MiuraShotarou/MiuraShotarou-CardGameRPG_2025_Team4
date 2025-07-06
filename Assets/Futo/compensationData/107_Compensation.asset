@@ -15,9 +15,8 @@ MonoBehaviour:
   displayName: "\u4EE3\u511F\u653B\u6483"
   cardName: Compensation
   synthesisType: 0
-  type: 5
   id: 107
-  icon: {fileID: 21300000, guid: d7d3e2169b005864a95c27edc05164ad, type: 3}
+  icon: {fileID: 21300000, guid: 1619019ac35220049a4bd9c306fbf5eb, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   description: "\u4EE3\u511F\u653B\u6483"
   cardStatus:

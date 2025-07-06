@@ -16,9 +16,9 @@ MonoBehaviour:
   cardName: Poison
   synthesisType: 0
   id: 105
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 93d21c3306827cb4bad4938e0b689e88, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
-  description: "\u672A\u5B9A"
+  description: "\u6BD2\u306B\u3059\u308B"
   cardStatus:
     attack_Status: 0
     magic_Status: 0

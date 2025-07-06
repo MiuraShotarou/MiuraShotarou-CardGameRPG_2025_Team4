@@ -15,9 +15,8 @@ MonoBehaviour:
   displayName: "\u30EA\u30D5\u30EC\u30AF\u30BF\u30FC"
   cardName: Reflector
   synthesisType: 1
-  type: 6
   id: 205
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 3bbbbb444d07e934dac1bab56e66acfb, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   description: "\u76F8\u624B\u306E\u653B\u6483\u3092\u53CD\u5C04"
   cardStatus:
