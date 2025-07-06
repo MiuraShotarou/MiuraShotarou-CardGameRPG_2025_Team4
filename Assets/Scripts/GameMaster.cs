@@ -63,7 +63,6 @@ public class GameMaster : MonoBehaviour
         SendCardTo(player);
         RefreshAddFunctionDate();
         TurnSetup();
-        StartCoroutine(soundManager.PlayBattleBGM());
     }
 
     void TurnSetup()

@@ -3036,6 +3036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   master: {fileID: 675590290}
   gameUI: {fileID: 1820168018}
+  soundManager: {fileID: 1112405946}
   ExitButton: {fileID: 1165540954}
   ExitButton2: {fileID: 940335336}
 --- !u!114 &675590294
@@ -5145,6 +5146,8 @@ MonoBehaviour:
   stageSelectBGM: {fileID: 8300000, guid: 2a10308e8282b674283cd4f75d22f4d7, type: 3}
   battleStartBGM: {fileID: 8300000, guid: b3ceea37b96d3af4d8601884833bfd7e, type: 3}
   battleLoopBGM: {fileID: 8300000, guid: c34efcb8e80bfa14bb1f33b5f51c9ca1, type: 3}
+  dragonStartBGM: {fileID: 8300000, guid: 0d6bc7c8d10db40419ecad8000b82832, type: 3}
+  dragonLoopBGM: {fileID: 8300000, guid: c6ab89a4860afc54c9b635e4868968eb, type: 3}
   winBGM: {fileID: 8300000, guid: 5d655235d7ab2214d90167372215530b, type: 3}
   battleBGMVolume: 0.5
 --- !u!4 &1112405947
@@ -5665,7 +5668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 200.00027}
+  m_AnchoredPosition: {x: 0, y: 200.00134}
   m_SizeDelta: {x: 0, y: 800}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1324895147
@@ -8781,8 +8784,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1804400923}
   m_HandleRect: {fileID: 1804400922}
   m_Direction: 2
-  m_Value: -0.0000015258789
-  m_Size: 0.7499938
+  m_Value: -0.000006713867
+  m_Size: 0.7499971
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

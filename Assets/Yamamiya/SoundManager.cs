@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip stageSelectBGM;
     [SerializeField] AudioClip battleStartBGM;
     [SerializeField] AudioClip battleLoopBGM;
+    [SerializeField] AudioClip dragonStartBGM;
+    [SerializeField] AudioClip dragonLoopBGM;
     [SerializeField] AudioClip winBGM;
 
     [SerializeField] float battleBGMVolume = 0.5f;
@@ -40,6 +42,16 @@ public class SoundManager : MonoBehaviour
         aud.PlayOneShot(battleStartBGM);
         yield return new WaitUntil(() => !aud.isPlaying) ;
         aud.clip = battleLoopBGM ;
+        aud.Play();
+    }
+
+    public IEnumerator PlayBattleDragonBGM()
+    {
+        aud.Stop();
+        aud.volume = battleBGMVolume ;
+        aud.PlayOneShot(dragonStartBGM);
+        yield return new WaitUntil(() => !aud.isPlaying);
+        aud.clip = dragonLoopBGM;
         aud.Play();
     }
 

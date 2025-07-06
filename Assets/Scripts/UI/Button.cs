@@ -8,6 +8,7 @@ public class Button : MonoBehaviour
 {
     [SerializeField] GameMaster master;
     [SerializeField] GameUI gameUI;
+    [SerializeField] SoundManager soundManager;
 
     [SerializeField] GameObject ExitButton;
     [SerializeField] GameObject ExitButton2;
@@ -54,18 +55,21 @@ public class Button : MonoBehaviour
     {
         master.enemyNum = 0;
         master.Serect();
+        StartCoroutine(soundManager.PlayBattleBGM());
     }
 
     public void GolemButton()
     {
         master.enemyNum = 1;
         master.Serect();
+        StartCoroutine(soundManager.PlayBattleBGM());
     }
 
     public void DragonButton()
     {
         master.enemyNum = 2;
         master.Serect();
+        StartCoroutine(soundManager.PlayBattleDragonBGM());
     }
 
 
