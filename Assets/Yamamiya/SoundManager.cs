@@ -12,15 +12,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip dragonLoopBGM;
     [SerializeField] AudioClip winBGM;
 
-    [SerializeField] float battleBGMVolume = 0.5f;
-
     private AudioSource aud;
-    private float InitialVolume = 0f;
 
     private void Awake()
     {
         aud = GetComponent<AudioSource>();
-        InitialVolume = aud.volume;
     }
 
     void Start()
@@ -38,7 +34,6 @@ public class SoundManager : MonoBehaviour
     public IEnumerator PlayBattleBGM()
     {
         aud.Stop();
-        aud.volume = battleBGMVolume;
         aud.PlayOneShot(battleStartBGM);
         yield return new WaitUntil(() => !aud.isPlaying) ;
         aud.clip = battleLoopBGM ;
@@ -48,7 +43,6 @@ public class SoundManager : MonoBehaviour
     public IEnumerator PlayBattleDragonBGM()
     {
         aud.Stop();
-        aud.volume = battleBGMVolume ;
         aud.PlayOneShot(dragonStartBGM);
         yield return new WaitUntil(() => !aud.isPlaying);
         aud.clip = dragonLoopBGM;
